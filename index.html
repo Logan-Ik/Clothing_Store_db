@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clothing Store</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div id="similarModal" class="modal hidden">
+        <div class="modal-content">
+            <span id="closeModal" class="close">&times;</span>
+            <h3>You might also like</h3>
+            <div id="similarProducts"></div>
+        </div>
+    </div>
+
+    <header>
+        <h1>Clothing Store</h1>
+        <nav>
+            <span id="user-info"></span>
+            <button id="logoutBtn">Logout</button>
+        </nav>
+    </header>
+
+    <main>
+        <div id="auth-buttons">
+            <a href="/login.html">
+                <button>Login</button>
+            </a>
+            <a href="/signup.html">
+                <button>Sign Up</button>
+            </a>
+        </div>
+
+        <div id="cart-message"></div>
+
+        <div id="products"></div>
+
+        <br/>
+
+        <a href="/cart.html">
+            <button>🛒 View Cart</button>
+        </a>
+    </main>
+
+    <script type="module" src="/logout.js"></script>
+    <script type="module" src="/app.js"></script>
+</body>
+</html>

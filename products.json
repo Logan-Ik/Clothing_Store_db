@@ -1,0 +1,59 @@
+[
+  {
+    "id": 1,
+    "name": "T-shirt",
+    "price": 499,
+    "image": "images/tshirt.jpg",
+    "description": "A stylish and comfortable t-shirt made from high-quality cotton. Perfect for casual wear and available in various colors and sizes."
+  },
+  {
+    "id": 2,
+    "name": "blue jeans",
+    "price": 299,
+    "image": "images/jeans.jpg",
+    "description": "A pair of classic denim jeans with a modern fit. Made from durable denim fabric, these jeans are perfect for everyday wear and can be dressed up or down."
+  },
+    {
+        "id": 3,
+        "name": "grey hoodie",
+        "price": 799,
+        "image": "images/hoodie.jpg",
+        "description": "A cozy and warm hoodie made from soft fleece material. Ideal for cooler weather, this hoodie features a front pocket and an adjustable drawstring hood."
+    },
+    {
+        "id": 4,
+        "name": "white shoes",
+        "price": 999,
+        "image": "images/sneakers.jpg",
+        "description": "A Stylish pair of sneakers made from high-quality materials. These sneakers feature a sleek design and are perfect for both casual and athletic wear."
+    },
+  {
+    "id": 5,
+    "name": "orange shoes",
+    "price": 499,
+    "image": "images/orange-shoes.jpg",
+    "description": "A pair of comfortable and trendy sneakers designed for everyday wear. These sneakers featurea breathable upper and a cushioned sole for all-day comfort."
+  },
+  {
+    "id": 6,
+    "name": "green hoodie",
+    "price": 299,
+    "image": "images/green-hoodie.jpg",
+    "description": "A fashionable and warm hoodie featuring a soft fleece lining and a cozy design."
+  },
+    {
+        "id": 7,
+        "name": "blue T-shirt",
+        "price": 799,
+        "image": "images/blue-tshirt.jpg",
+        "description": "A stylish and elegant t-shirt made from high-quality cotton. Perfect for casual wear and available in various colors and sizes."
+    },
+    {
+        "id": 16,
+        "name": "black jeans",
+        "price": 999,
+        "image": "images/black-jeans.jpg",
+        "description": "A comfortable and versatile pair of jeans made from lightweight fabric.these jeans feature an elastic waistband and multiple pockets for convenience."
+    }
+]
+
