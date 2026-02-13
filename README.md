@@ -1,6 +1,6 @@
 Clothing Store – Full Stack Web Application
 
-A full-stack clothing store web application built using **Node.js, Express, and MySQL**, featuring authentication, product listings, and a shopping cart system.
+A full-stack clothing store web application built using Node.js, Express, and MySQL, featuring authentication, product listings, and a shopping cart system.
 
 
 Features
@@ -11,9 +11,6 @@ User authentication (Login / Signup)
 Logout system
 MySQL database integration
 Clean frontend UI (HTML, CSS, JavaScript)
-Express backend API
-
-Tech Stack
 
 Frontend
 
@@ -30,35 +27,8 @@ Database
 
 MySQL
 
-
-
 Project Structure
 This has been changed to fit into GitHub and remove sensitive info 
-
-
-clothing-store/
-│
-├── node_modules/
-├── public/              # Frontend files
-│   ├── index.html
-│   ├── cart.html
-│   ├── login.html
-│   ├── signup.html
-│   ├── styles.css
-│   ├── app.js
-│   ├── cart.js
-│   ├── login.js
-│   ├── signup.js
-│   ├── logout.js
-│   └── images
-│
-├── db.js                # Database connection
-├── server.js            # Express server
-├── package.json
-├── package-lock.json
-├── .env                 # Environment variables (not committed)
-└── README.md
-
 
 Installation & Setup (Local Development)
 
@@ -76,8 +46,6 @@ cd clothing-store
 npm install
 ```
 
-
-
 Configure Environment Variables
 
 Create a `.env` file in the root directory:
@@ -90,27 +58,108 @@ DB_NAME=clothing_store
 PORT=3000
 ```
 
-
 Start MySQL
 
 Make sure your MySQL server is running.
 
-Create your database and required tables before starting the app.
+Database Setup
+Prerequisites
 
+Make sure you have:
 
-Run the Server
+Node.js installed
+MySQL installed and running
+Access to MySQL via terminal or MySQL Workbench
+
+Create the Database
+In Terminal (PowerShell / Command Prompt)
+
+```bash
+mysql -u root -p
+```
+
+Enter your MySQL password.
+
+Then run:
+
+```sql
+CREATE DATABASE clothing_store;
+USE clothing_store;
+```
+
+---
+
+Create Tables
+
+Run the following SQL inside MySQL:
+
+```sql
+-- Users table
+CREATE TABLE users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  username VARCHAR(100) NOT NULL UNIQUE,
+  password VARCHAR(255) NOT NULL
+);
+
+-- Products table
+CREATE TABLE products (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  description TEXT,
+  price DECIMAL(10,2) NOT NULL,
+  image VARCHAR(255)
+);
+
+-- Cart table
+CREATE TABLE cart (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  user_id INT NOT NULL,
+  product_id INT NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+  FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE
+);
+```
+
+---
+
+Insert Sample Products
+
+```sql
+INSERT INTO products (name, description, price, image) VALUES
+```
+
+Configure Database Connection
+
+In your backend file (e.g., `db.js`), ensure your connection matches:
+
+```js
+import mysql from "mysql2/promise";
+
+const db = mysql.createPool({
+  host: "localhost",
+  user: "root",
+  password: "YOUR_PASSWORD",
+  database: "clothing_store"
+});
+
+export default db;
+```
+
+Start the Server
+
+From your project root:
 
 ```bash
 node server.js
 ```
 
-or (if using nodemon):
+Or if using nodemon:
 
 ```bash
-nodemon server.js
+npx nodemon server.js
 ```
 
- Open in Browser
+Then open:
 
 ```
 http://localhost:3000
@@ -118,17 +167,14 @@ http://localhost:3000
 
 Note: GitHub Pages cannot run this project because it requires a backend server and database.
 
-
 Future Improvements
 
 Payment gateway integration
 Admin dashboard
 Order history
 JWT authentication
-Cloud database hosting
 Product filtering and search
 Responsive mobile improvements
-
 
 Author
 
